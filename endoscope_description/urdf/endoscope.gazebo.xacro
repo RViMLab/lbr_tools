@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="endoscope_gazebo" params="robot_name"/>
+
+  <!-- ros_control-plugin -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="control">
+      <robotNamespace>/${robot_name}</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <!-- link 0 -->
+  <gazebo reference="link_0">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <!-- add camera -->
+
+  </xacro:macro>
+</robot>
