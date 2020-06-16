@@ -35,6 +35,16 @@
             </collision>
         </link>
 
+        <joint name="${endoscope_name}_joint_cm" type="fixed">
+            <parent link="${endsocope_name}_link_0"/>
+            <child link="${endoscope_name}_link_cm"/>
+            <origin xyz="0 0 0.53186" rpy="0 0 0"/>
+        </joint>
+
+        <link name="${endoscope_name}_link_cm">
+        </link>
+
+        <!-- extensions -->
         <xacro:endoscope_gazebo endoscope_name="${endoscope_name}"/>
 
     </xacro:macro>
