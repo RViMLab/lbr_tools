@@ -1,41 +1,41 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   
-    <xacro:macro name="endoscope" params="parent robot_name">
+    <xacro:macro name="endoscope" params="endoscope_name parent">
 
-    <!-- include gazebo specifications -->
-    <xacro:include filename="$(find endoscope_description)/urdf/endoscope.gazebo.xacro"/>
+        <!-- include gazebo specifications -->
+        <xacro:include filename="$(find endoscope_description)/urdf/endoscope.gazebo.xacro"/>
 
-    <!--joint between {parent} and link_0-->
-    <joint name="${parent}_${robot_name}_joint" type="fixed">
-        <parent link="${parent}"/>
-        <child link="link_0"/>
-    </joint>
+        <!--joint between {parent} and link_0-->
+        <joint name="${parent}_${endoscope_name}_joint" type="fixed">
+            <parent link="${parent}"/>
+            <child link="${endoscope_name}_link_0"/>
+        </joint>
 
-    <link name="link_0">
-        <inertial>
-            <origin rpy="0 0 0" xyz="-6.848375926496336e-18 3.4324719801768515e-07 0.11464386534267244"/>
-            <mass value="2.6062870546046777"/>
-            <inertia ixx="0.019428" ixy="-0.0" ixz="-0.0" iyy="0.019428" iyz="-0.0" izz="0.000824"/>
+        <link name="${endoscope_name}_link_0">
+            <inertial>
+                <origin rpy="0 0 0" xyz="-6.848375926496336e-18 3.4324719801768515e-07 0.11464386534267244"/>
+                <mass value="2.6062870546046777"/>
+                <inertia ixx="0.019428" ixy="-0.0" ixz="-0.0" iyy="0.019428" iyz="-0.0" izz="0.000824"/>
             </inertial>
-        <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-                <mesh filename="package://endoscope_description/meshes/visual/link_0.stl"/>
-            </geometry>
-            <material name="silver">
-                <color rgba="1 0 0 1"/>
-            </material>
-        </visual>
-        <collision>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-                <mesh filename="package://endoscope_description/meshes/collisino/link_0.stl"/>
-            </geometry>
-        </collision>
-    </link>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://endoscope_description/meshes/visual/link_0.stl"/>
+                </geometry>
+                <material name="silver">
+                    <color rgba="1 0 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://endoscope_description/meshes/collision/link_0.stl"/>
+                </geometry>
+            </collision>
+        </link>
 
-    <xacro:endoscope_gazebo robot_name="${robot_name}"/>
+        <xacro:endoscope_gazebo endoscope_name="${endoscope_name}"/>
 
     </xacro:macro>
 
