@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <package format="2">
-  <!-- many contents taken from https://github.com/IFL-CAMP/iiwa_stack/tree/master/iiwa_description -->
   <name>gripper_description</name>
   <version>1.0.0</version>
   <description>Da Vinci surgical robot gripper description files</description>
