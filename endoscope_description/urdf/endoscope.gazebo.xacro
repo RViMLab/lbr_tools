@@ -3,13 +3,6 @@
 
     <xacro:macro name="endoscope_gazebo" params="endoscope_name">
 
-    <!-- ros_control-plugin -->
-    <gazebo>
-        <plugin filename="libgazebo_ros_control.so" name="control">
-            <robotNamespace>/${endoscope_name}</robotNamespace>
-        </plugin>
-    </gazebo>
-
     <!-- link 0 -->
     <gazebo reference="${endoscope_name}_link_0">
         <mu1>0.2</mu1>
@@ -24,8 +17,8 @@
             <camera name="head">
                 <horizontal_fov>1.3962634</horizontal_fov>
                 <image>
-                    <width>800</width>
-                    <height>800</height>
+                    <width>320</width>
+                    <height>240</height>
                     <format>R8G8B8</format>
                 </image>
                 <clip>
@@ -36,7 +29,7 @@
             <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
                 <alwaysOn>true</alwaysOn>
                 <updateRate>0.0</updateRate>
-                <cameraName>${endoscope_name}/${endoscope_name}_camera</cameraName>
+                <cameraName>${endoscope_name}_camera</cameraName>
                 <imageTopicName>image_raw</imageTopicName>
                 <cameraInfoTopicName>camera_info</cameraInfoTopicName>
                 <frameName>camera_link</frameName>
