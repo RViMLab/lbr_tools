@@ -13,6 +13,7 @@
         <joint name="${parent}_${gripper_name}_joint" type="fixed">
             <parent link="${parent}"/>
             <child link="${gripper_name}_link_0"/>
+            <origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
         </joint>
 
         <link name="${gripper_name}_link_0">
@@ -159,6 +160,15 @@
                     <mesh filename="package://gripper_description/meshes/collision/link_4.stl"/>
                 </geometry>
             </collision>
+        </link>
+
+        <joint name="${gripper_name}_joint_ee" type="fixed">
+            <origin rpy="0 0 0" xyz="-0.004028 -0.028766 -0.001926"/>
+            <parent link="${gripper_name}_link_2"/>
+            <child link="${gripper_name}_ee"/> 
+        </joint>
+
+        <link name="${gripper_name}_ee">
         </link>
 
         <!-- extensions -->
