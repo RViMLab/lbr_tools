@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   
-    <xacro:macro name="endoscope" params="endoscope_name parent">
+    <xacro:macro name="endoscope" params="endoscope_name hardware_interface parent">
 
         <!-- include gazebo specifications -->
         <xacro:include filename="$(find endoscope_description)/urdf/endoscope.gazebo.xacro"/>
@@ -28,8 +28,8 @@
                 <geometry>
                     <mesh filename="package://endoscope_description/meshes/visual/link_0.stl"/>
                 </geometry>
-                <material name="silver">
-                    <color rgba="1 0 0 1"/>
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 1.0"/>
                 </material>
             </visual>
             <collision>
@@ -82,7 +82,7 @@
 
         <!-- extensions -->
         <xacro:endoscope_gazebo endoscope_name="${endoscope_name}"/>
-        <xacro:endoscope_transmission hardware_interface="${hardware_interface}" gripper_name="${endoscope_name}"/>
+        <xacro:endoscope_transmission hardware_interface="${hardware_interface}" endoscope_name="${endoscope_name}"/>
 
     </xacro:macro>
 

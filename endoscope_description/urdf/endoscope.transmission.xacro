@@ -6,7 +6,7 @@
 
         <!-- joint 1 -->
         <transmission name="${endoscope_name}_tran_1">
-            <robotNamespace>/${gripper_name}</robotNamespace>
+            <robotNamespace>/${endoscope_name}</robotNamespace>
             <type>transmission_interface/SimpleTransmission</type>
             <joint name="${endoscope_name}_joint_1">
                 <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
