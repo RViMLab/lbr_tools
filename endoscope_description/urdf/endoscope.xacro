@@ -1,13 +1,10 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   
-    <xacro:macro name="endoscope" params="endoscope_name hardware_interface parent">
+    <xacro:macro name="endoscope" params="endoscope_name parent">
 
         <!-- include gazebo specifications -->
         <xacro:include filename="$(find endoscope_description)/urdf/endoscope.gazebo.xacro"/>
-
-        <!-- include transmission for ros_control -->
-        <xacro:include filename="$(find endoscope_description)/urdf/endoscope.transmission.xacro"/>
 
         <!--joint between {parent} and link_0-->
         <joint name="${parent}_${endoscope_name}_joint" type="fixed">
@@ -82,7 +79,6 @@
 
         <!-- extensions -->
         <xacro:endoscope_gazebo endoscope_name="${endoscope_name}"/>
-        <xacro:endoscope_transmission hardware_interface="${hardware_interface}" endoscope_name="${endoscope_name}"/>
 
     </xacro:macro>
 
