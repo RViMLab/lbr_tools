@@ -6,6 +6,9 @@
         <!-- include gazebo specifications -->
         <xacro:include filename="$(find endoscope_description)/urdf/endoscope.gazebo.xacro"/>
 
+        <!-- include transmission for ros_control -->
+        <xacro:include filename="$(find endoscope_description)/urdf/endoscope.transmission.xacro"/>
+
         <!--joint between {parent} and link_0-->
         <joint name="${parent}_${endoscope_name}_joint" type="fixed">
             <parent link="${parent}"/>
@@ -13,11 +16,12 @@
             <origin xyz="0 0 0" rpy="0 0 1.57079632679"/>
         </joint>
 
+        <!-- link 0 -->
         <link name="${endoscope_name}_link_0">
             <inertial>
-                <origin rpy="0 0 0" xyz="-6.848375926496336e-18 3.4324719801768515e-07 0.11464386534267244"/>
-                <mass value="2.6062870546046777"/>
-                <inertia ixx="0.019428" ixy="-0.0" ixz="-0.0" iyy="0.019428" iyz="-0.0" izz="0.000824"/>
+                <origin rpy="0 0 0" xyz="-7.270573632311392e-18 -7.270573632311392e-18 0.09976749827968114"/>
+                <mass value="2.4549415802586934"/>
+                <inertia ixx="0.008545" ixy="-0.0" ixz="-0.0" iyy="0.008545" iyz="-0.0" izz="0.000822"/>
             </inertial>
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -36,17 +40,49 @@
             </collision>
         </link>
 
-        <joint name="${endoscope_name}_joint_cm" type="fixed">
+        <joint name="${endoscope_name}_joint_1" type="fixed">
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.182"/>
             <parent link="${endoscope_name}_link_0"/>
+            <child link="${endoscope_name}_link_1"/>
+        </joint>
+
+        <!-- link 1 -->
+        <link name="${endoscope_name}_link_1">
+            <inertial>
+                <origin rpy="0 0 0" xyz="-1.8420957352208925e-18 5.908967207684404e-06 0.17400951653092117"/>
+                <mass value="0.1513971388421877"/>
+                <inertia ixx="0.001529" ixy="-0.0" ixz="0.0" iyy="0.001529" iyz="-0.0" izz="1e-06"/>
+            </inertial>
+            <visual>
+                <origin rpy="0 0 0" xyz="0.0 -0.0 -0.182"/>
+                <geometry>
+                    <mesh filename="package://endoscope_description/meshes/visual/link_1.stl"/>
+                </geometry>
+                <material name="silver">
+                    <color rgba="1 0 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0.0 -0.0 -0.182"/>
+                <geometry>
+                    <mesh filename="package://endoscope_description/meshes/collision/link_1.stl"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${endoscope_name}_joint_cm" type="fixed">
+            <parent link="${endoscope_name}_link_1"/>
             <child link="${endoscope_name}_link_cm"/>
             <origin xyz="0 0 0.53186" rpy="0 -1.57079632679 -1.57079632679"/>
         </joint>
 
+        <!-- camera link -->
         <link name="${endoscope_name}_link_cm">
         </link>
 
         <!-- extensions -->
         <xacro:endoscope_gazebo endoscope_name="${endoscope_name}"/>
+        <xacro:endoscope_transmission hardware_interface="${hardware_interface}" gripper_name="${endoscope_name}"/>
 
     </xacro:macro>
 

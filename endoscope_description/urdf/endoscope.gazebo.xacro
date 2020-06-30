@@ -7,6 +7,13 @@
     <gazebo reference="${endoscope_name}_link_0">
         <mu1>0.2</mu1>
         <mu2>0.2</mu2>
+        <material>Gazebo/White</material>
+    </gazebo>
+
+    <!-- link 1 -->
+    <gazebo reference="${endoscope_name}_link_1">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
         <material>Gazebo/Grey</material>
     </gazebo>
 
