@@ -70,7 +70,7 @@
         <joint name="${endoscope_name}_joint_cm" type="fixed">
             <parent link="${endoscope_name}_link_1"/>
             <child link="${endoscope_name}_link_cm"/>
-            <origin xyz="0 0 0.53186" rpy="0 -1.57079632679 -1.57079632679"/>
+            <origin xyz="0 0 0.349946" rpy="0 -1.57079632679 -1.57079632679"/>
         </joint>
 
         <!-- camera link -->
