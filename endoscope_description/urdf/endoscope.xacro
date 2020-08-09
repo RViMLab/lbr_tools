@@ -77,6 +77,16 @@
         <link name="${endoscope_name}_link_cm">
         </link>
 
+        <!-- optical frame https://answers.ros.org/question/232534/gazebo-camera-frame-is-inconsistent-with-rviz-opencv-convention/ -->
+        <joint name="${endoscope_name}_joint_cm_optical" type="fixed">
+            <parent link="${endoscope_name}_link_cm"/>
+            <child link="${endoscope_name}_link_cm_optical"/>
+            <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679"/>
+        </joint>  
+
+        <link name="${endoscope_name}_link_cm_optical">
+        </link>  
+
         <!-- extensions -->
         <xacro:endoscope_gazebo endoscope_name="${endoscope_name}"/>
 
