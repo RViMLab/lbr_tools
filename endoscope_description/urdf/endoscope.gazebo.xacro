@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="endoscope_gazebo" params="endoscope_name">
+    <xacro:macro name="endoscope_gazebo" params="endoscope_name robot_name">
 
     <!-- link 0 -->
     <gazebo reference="${endoscope_name}_link_0">
@@ -36,6 +36,7 @@
             <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
                 <alwaysOn>true</alwaysOn>
                 <updateRate>0.0</updateRate>
+                <robotNamespace>/${robot_name}</robotNamespace>
                 <cameraName>${endoscope_name}_camera</cameraName>
                 <imageTopicName>image_raw</imageTopicName>
                 <cameraInfoTopicName>camera_info</cameraInfoTopicName>

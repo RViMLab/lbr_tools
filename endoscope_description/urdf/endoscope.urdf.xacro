@@ -8,11 +8,12 @@
 
     <!--  Arguments for the med7 macro  -->
     <xacro:arg name="endoscope_name" default="endoscope"/>
+    <xacro:arg name="robot_name" default="lbr"/>
 
     <!-- fix to world -->
     <link name="world"/>
 
     <!-- insert endoscope -->
-    <xacro:endoscope  endoscope_name="$(arg endoscope_name)" parent="world"/>
+    <xacro:endoscope  endoscope_name="$(arg endoscope_name)" robot_name="$(arg robot_name)" parent="world"/>
 
 </robot> 

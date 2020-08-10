@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   
-    <xacro:macro name="endoscope" params="endoscope_name parent">
+    <xacro:macro name="endoscope" params="endoscope_name robot_name parent">
 
         <!-- include gazebo specifications -->
         <xacro:include filename="$(find endoscope_description)/urdf/endoscope.gazebo.xacro"/>
@@ -88,7 +88,7 @@
         </link>  
 
         <!-- extensions -->
-        <xacro:endoscope_gazebo endoscope_name="${endoscope_name}"/>
+        <xacro:endoscope_gazebo endoscope_name="${endoscope_name}" robot_name="${robot_name}"/>
 
     </xacro:macro>
 
