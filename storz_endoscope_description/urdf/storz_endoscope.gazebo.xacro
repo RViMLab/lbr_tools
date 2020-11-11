@@ -10,13 +10,6 @@
             <material>Gazebo/Grey</material>
         </gazebo>
 
-        <!-- link 1 -->
-        <gazebo reference="link_1">
-            <mu1>0.2</mu1>
-            <mu2>0.2</mu2>
-            <material>Gazebo/Grey</material>
-        </gazebo>
-
         <!-- camera -->
         <gazebo reference="${endoscope_name}_link_cm">
             <sensor type="camera" name="${endoscope_name}_camera">
