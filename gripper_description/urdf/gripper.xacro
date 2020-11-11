@@ -4,10 +4,10 @@
     <xacro:macro name="gripper" params="gripper_name hardware_interface parent">
 
         <!-- include gazebo specifications -->
-        <xacro:include filename="$(find gripper_description)/urdf/gripper.gazebo.xacro"/>
+        <xacro:include filename="$(find da_vinci_gripper_description)/urdf/gripper.gazebo.xacro"/>
 
         <!-- include transmission for ros_control -->
-        <xacro:include filename="$(find gripper_description)/urdf/gripper.transmission.xacro"/>
+        <xacro:include filename="$(find da_vinci_gripper_description)/urdf/gripper.transmission.xacro"/>
 
         <!--joint between {parent} and link_0-->
         <joint name="${parent}_${gripper_name}_joint" type="fixed">
@@ -25,7 +25,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/visual/link_0.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/visual/link_0.stl"/>
                 </geometry>
                 <material name="silver">
                     <color rgba="1 0 0 1"/>
@@ -34,7 +34,7 @@
             <collision>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/collision/link_0.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/collision/link_0.stl"/>
                 </geometry>
             </collision>
         </link>
@@ -55,7 +55,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0.0 0.417886 -0.064767"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/visual/link_1.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/visual/link_1.stl"/>
                 </geometry>
                 <material name="silver">
                     <color rgba="1 0 0 1"/>
@@ -64,7 +64,7 @@
             <collision>
                 <origin rpy="0 0 0" xyz="0.0 0.417886 -0.064767"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/collision/link_1.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/collision/link_1.stl"/>
                 </geometry>
             </collision>
         </link>
@@ -86,7 +86,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="-0.004011 0.426986 -0.064842"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/visual/link_2.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/visual/link_2.stl"/>
                 </geometry>
                 <material name="silver">
                     <color rgba="1 0 0 1"/>
@@ -95,7 +95,7 @@
             <collision>
                 <origin rpy="0 0 0" xyz="-0.004011 0.426986 -0.064842"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/collision/link_2.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/collision/link_2.stl"/>
                 </geometry>
             </collision>
         </link>
@@ -117,7 +117,7 @@
                 <visual>
                 <origin rpy="0 0 0" xyz="-1.6e-05 0.43587 -0.066816"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/visual/link_3.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/visual/link_3.stl"/>
                 </geometry>
                 <material name="silver">
                     <color rgba="1 0 0 1"/>
@@ -126,7 +126,7 @@
             <collision>
                 <origin rpy="0 0 0" xyz="-1.6e-05 0.43587 -0.066816"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/collision/link_3.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/collision/link_3.stl"/>
                 </geometry>
             </collision>
         </link>
@@ -148,7 +148,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="1.7e-05 0.435902 -0.062916"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/visual/link_4.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/visual/link_4.stl"/>
                 </geometry>
                 <material name="silver">
                     <color rgba="1 0 0 1"/>
@@ -157,7 +157,7 @@
             <collision>
                 <origin rpy="0 0 0" xyz="1.7e-05 0.435902 -0.062916"/>
                 <geometry>
-                    <mesh filename="package://gripper_description/meshes/collision/link_4.stl"/>
+                    <mesh filename="package://da_vinci_gripper_description/meshes/collision/link_4.stl"/>
                 </geometry>
             </collision>
         </link>

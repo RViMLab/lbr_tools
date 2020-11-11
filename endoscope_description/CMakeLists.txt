@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.2)
-project(endoscope_description)
+project(da_vinci_endoscope_description)
 
 find_package(catkin REQUIRED)
 catkin_package()

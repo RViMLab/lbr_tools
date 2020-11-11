@@ -4,7 +4,7 @@
     <xacro:macro name="endoscope" params="endoscope_name robot_name parent">
 
         <!-- include gazebo specifications -->
-        <xacro:include filename="$(find endoscope_description)/urdf/endoscope.gazebo.xacro"/>
+        <xacro:include filename="$(find da_vinci_endoscope_description)/urdf/endoscope.gazebo.xacro"/>
 
         <!--joint between {parent} and link_0-->
         <joint name="${parent}_${endoscope_name}_joint" type="fixed">
@@ -23,7 +23,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://endoscope_description/meshes/visual/link_0.stl"/>
+                    <mesh filename="package://da_vinci_endoscope_description/meshes/visual/link_0.stl"/>
                 </geometry>
                 <material name="white">
                     <color rgba="1.0 1.0 1.0 1.0"/>
@@ -32,7 +32,7 @@
             <collision>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://endoscope_description/meshes/collision/link_0.stl"/>
+                    <mesh filename="package://da_vinci_endoscope_description/meshes/collision/link_0.stl"/>
                 </geometry>
             </collision>
         </link>
@@ -53,7 +53,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0.0 -0.0 -0.182"/>
                 <geometry>
-                    <mesh filename="package://endoscope_description/meshes/visual/link_1.stl"/>
+                    <mesh filename="package://da_vinci_endoscope_description/meshes/visual/link_1.stl"/>
                 </geometry>
                 <material name="silver">
                     <color rgba="1 0 0 1"/>
@@ -62,7 +62,7 @@
             <collision>
                 <origin rpy="0 0 0" xyz="0.0 -0.0 -0.182"/>
                 <geometry>
-                    <mesh filename="package://endoscope_description/meshes/collision/link_1.stl"/>
+                    <mesh filename="package://da_vinci_endoscope_description/meshes/collision/link_1.stl"/>
                 </geometry>
             </collision>
         </link>

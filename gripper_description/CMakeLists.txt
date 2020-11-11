@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.2)
-project(gripper_description)
+project(da_vinci_gripper_description)
 
 find_package(catkin REQUIRED)
 catkin_package()

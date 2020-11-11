@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>gripper_description</name>
+  <name>da_vinci_gripper_description</name>
   <version>1.0.0</version>
   <description>Da Vinci surgical robot gripper description files</description>
   <maintainer email="m.huber_1994@hotmail.de">mhubii</maintainer>
