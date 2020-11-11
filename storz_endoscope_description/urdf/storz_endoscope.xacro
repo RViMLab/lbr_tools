@@ -2,8 +2,7 @@
 <robot name="endoscope" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find storz_endoscope_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find storz_endoscope_description)/urdf/endoscope.trans" />
-<xacro:include filename="$(find storz_endoscope_description)/urdf/endoscope.gazebo" />
+<xacro:include filename="$(find storz_endoscope_description)/urdf/storz_endoscope.gazebo" />
 <link name="link_0">
   <inertial>
     <origin rpy="0 0 0" xyz="0.0011044635060518421 -0.00025940397558044673 0.024608364371170997"/>

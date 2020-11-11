@@ -4,7 +4,7 @@
     <xacro:macro name="endoscope" params="endoscope_name robot_name parent">
 
         <!-- include gazebo specifications -->
-        <xacro:include filename="$(find da_vinci_endoscope_description)/urdf/endoscope.gazebo.xacro"/>
+        <xacro:include filename="$(find da_vinci_endoscope_description)/urdf/da_vinci_endoscope.gazebo.xacro"/>
 
         <!--joint between {parent} and link_0-->
         <joint name="${parent}_${endoscope_name}_joint" type="fixed">

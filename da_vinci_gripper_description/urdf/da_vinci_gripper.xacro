@@ -4,10 +4,10 @@
     <xacro:macro name="gripper" params="gripper_name hardware_interface parent">
 
         <!-- include gazebo specifications -->
-        <xacro:include filename="$(find da_vinci_gripper_description)/urdf/gripper.gazebo.xacro"/>
+        <xacro:include filename="$(find da_vinci_gripper_description)/urdf/da_vinci_gripper.gazebo.xacro"/>
 
         <!-- include transmission for ros_control -->
-        <xacro:include filename="$(find da_vinci_gripper_description)/urdf/gripper.transmission.xacro"/>
+        <xacro:include filename="$(find da_vinci_gripper_description)/urdf/da_vinci_gripper.transmission.xacro"/>
 
         <!--joint between {parent} and link_0-->
         <joint name="${parent}_${gripper_name}_joint" type="fixed">
