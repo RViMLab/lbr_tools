@@ -14,6 +14,6 @@
     <link name="world"/>
 
     <!-- insert endoscope -->
-    <xacro:endoscope  endoscope_name="$(arg endoscope_name)" robot_name="$(arg robot_name)" parent="world"/>
+    <xacro:da_vinci_endoscope  endoscope_name="$(arg endoscope_name)" robot_name="$(arg robot_name)" parent="world"/>
 
 </robot> 

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="endoscope_gazebo" params="endoscope_name robot_name">
+    <xacro:macro name="da_vinci_endoscope_gazebo" params="endoscope_name robot_name">
 
     <!-- link 0 -->
     <gazebo reference="${endoscope_name}_link_0">
