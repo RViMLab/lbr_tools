@@ -38,7 +38,7 @@
         </link>
 
         <joint name="${endoscope_name}_joint_cm" type="fixed">
-            <origin rpy="0 0 0" xyz="-0.1903 0.0 0.0415"/>
+            <origin rpy="1.57079632679 0 3.141592654" xyz="-0.1903 0.0 0.0415"/>
             <parent link="${endoscope_name}_link_0"/>
             <child link="${endoscope_name}_link_cm"/>
         </joint>
