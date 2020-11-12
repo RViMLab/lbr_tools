@@ -16,9 +16,9 @@
         <!-- link 0 -->
         <link name="${endoscope_name}_link_0">
             <inertial>
-                <origin rpy="0 0 0" xyz="0.0011044635060518421 -0.00025940397558044673 0.024608364371170997"/>
-                <mass value="0.6888304856441179"/>
-                <inertia ixx="0.000315" ixy="-0.0" ixz="-1.3e-05" iyy="0.000607" iyz="3e-06" izz="0.000517"/>
+                <origin rpy="0 0 0" xyz="0.05347530282631193 -0.0009866876037994033 0.03417463143575086"/>
+                <mass value="1.5884453511086485"/>
+                <inertia ixx="0.000641" ixy="9.6e-05" ixz="-0.000622" iyy="0.004145" iyz="1.2e-05" izz="0.003991"/>
             </inertial>
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -32,14 +32,44 @@
             <collision>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://storz_endoscope_description/meshes/collision/link_0.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://storz_endoscope_description/meshes/collision/link_0.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${endoscope_name}_joint_1" type="fixed">
+            <origin rpy="0 0 0" xyz="-0.015 0.0 0.0415"/>
+            <parent link="${endoscope_name}_link_0"/>
+            <child link="${endoscope_name}_link_1"/>
+        </joint>
+
+        <!-- link 1 -->
+        <link name="${endoscope_name}_link_1">
+            <inertial>
+                <origin rpy="0 0 0" xyz="-0.08761286703720295 1.6070339520327724e-16 2.081251837537934e-13"/>
+                <mass value="0.017299976665697662"/>
+                <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="4.4e-05" iyz="-0.0" izz="4.4e-05"/>
+            </inertial>
+            <visual>
+                <origin rpy="0 0 0" xyz="0.015 -0.0 -0.0415"/>
+                <geometry>
+                    <mesh filename="package://storz_endoscope_description/meshes/visual/link_1.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+                <material name="silver">
+                    <color rgba="1 0 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0.015 -0.0 -0.0415"/>
+                <geometry>
+                    <mesh filename="package://storz_endoscope_description/meshes/collision/link_1.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
             </collision>
         </link>
 
         <joint name="${endoscope_name}_joint_cm" type="fixed">
-            <origin rpy="1.57079632679 0 3.141592654" xyz="-0.1903 0.0 0.0415"/>
-            <parent link="${endoscope_name}_link_0"/>
+            <origin rpy="1.57079632679 0 3.141592654" xyz="-0.1753 0.0 0.0"/>
+            <parent link="${endoscope_name}_link_1"/>
             <child link="${endoscope_name}_link_cm"/>
         </joint>
 
