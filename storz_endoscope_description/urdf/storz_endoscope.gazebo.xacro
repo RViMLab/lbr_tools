@@ -4,14 +4,14 @@
     <xacro:macro name="storz_endoscope_gazebo" params="endoscope_name robot_name">
 
         <!-- link 0 -->
-        <gazebo reference="link_0">
+        <gazebo reference="${endoscope_name}_link_0">
             <mu1>0.2</mu1>
             <mu2>0.2</mu2>
             <material>Gazebo/Grey</material>
         </gazebo>
 
         <!-- link 1 -->
-        <gazebo reference="link_1">
+        <gazebo reference="${endoscope_name}_link_1">
             <mu1>0.2</mu1>
             <mu2>0.2</mu2>
             <material>Gazebo/Grey</material>
