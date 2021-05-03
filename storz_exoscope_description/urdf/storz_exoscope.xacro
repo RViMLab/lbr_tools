@@ -10,7 +10,7 @@
         <joint name="${parent}_${exoscope_name}_joint" type="fixed">
             <parent link="${parent}"/>
             <child link="${exoscope_name}_link_0"/>
-            <origin xyz="0 0 0" rpy="0 0 1.57079632679"/>
+            <origin xyz="0 0 0" rpy="0 -1.57079632679 1.57079632679"/>
         </joint>
 
         <!-- link 0 -->
@@ -38,7 +38,7 @@
         </link>
 
         <joint name="${exoscope_name}_joint_cm" type="fixed">
-            <origin rpy="0 0 0" xyz="0.047 -0.005826 0.115248"/>
+            <origin rpy="0 0 -1.57079632679" xyz="0.047 -0.005826 0.115248"/>
             <parent link="${exoscope_name}_link_0"/>
             <child link="${exoscope_name}_link_cm"/>
         </joint>
