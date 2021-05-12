@@ -10,7 +10,7 @@
         <joint name="${parent}_${endoscope_name}_joint" type="fixed">
             <parent link="${parent}"/>
             <child link="${endoscope_name}_link_0"/>
-            <origin xyz="0 0 0" rpy="0 0 1.57079632679"/>
+            <origin xyz="0 0 0" rpy="0 0 3.141592654"/>
         </joint>
 
         <!-- link 0 -->
@@ -77,10 +77,11 @@
         <link name="${endoscope_name}_link_cm"/>
 
         <!-- optical frame https://answers.ros.org/question/232534/gazebo-camera-frame-is-inconsistent-with-rviz-opencv-convention/ -->
-        <joint name="${endoscope_name}_joint_cm_optical" type="fixed">
+        <joint name="${endoscope_name}_joint_cm_optical" type="fixed">  <!-- add continuous joint to rotate image digitally -->
             <parent link="${endoscope_name}_link_cm"/>
             <child link="${endoscope_name}_link_cm_optical"/>
             <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679"/>
+            <!--axis xyz="0.0 0.0 0.01"/-->  <!-- rotate about the optical axis -->
         </joint>  
 
         <link name="${endoscope_name}_link_cm_optical">
