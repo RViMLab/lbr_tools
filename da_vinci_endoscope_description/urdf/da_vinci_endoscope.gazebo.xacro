@@ -8,6 +8,7 @@
             <mu1>0.2</mu1>
             <mu2>0.2</mu2>
             <material>Gazebo/White</material>
+            <gravity>0</gravity>
         </gazebo>
 
         <!-- link 1 -->
@@ -15,6 +16,7 @@
             <mu1>0.2</mu1>
             <mu2>0.2</mu2>
             <material>Gazebo/Grey</material>
+            <gravity>0</gravity>
         </gazebo>
 
         <!-- camera -->
@@ -49,6 +51,7 @@
                     <distortionT2>0.0</distortionT2>
                 </plugin>
             </sensor>
+            <gravity>0</gravity>
         </gazebo>
 
     </xacro:macro>
