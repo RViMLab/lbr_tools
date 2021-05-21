@@ -69,7 +69,7 @@
         </link>
 
         <joint name="${tilt_endoscope_name}_joint_cm" type="fixed">
-            <origin rpy="0 0 0" xyz="0.0 0.0 0.2874"/>
+            <origin rpy="-1.57079632679 -1.57079632679 0" xyz="0.0 0.0 0.2874"/>
             <parent link="${tilt_endoscope_name}_link_1"/>
             <child link="${tilt_endoscope_name}_link_cm"/>
         </joint>
