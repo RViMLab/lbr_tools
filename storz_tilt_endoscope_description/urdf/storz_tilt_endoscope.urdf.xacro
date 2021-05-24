@@ -14,6 +14,6 @@
     <link name="world"/>
 
     <!-- insert endoscope -->
-    <xacro:storz_endoscope  tilt_endoscope_name="$(arg tilt_endoscope_name)" robot_name="$(arg robot_name)" parent="world"/>
+    <xacro:storz_tilt_endoscope  tilt_endoscope_name="$(arg tilt_endoscope_name)" robot_name="$(arg robot_name)" parent="world"/>
 
 </robot> 
