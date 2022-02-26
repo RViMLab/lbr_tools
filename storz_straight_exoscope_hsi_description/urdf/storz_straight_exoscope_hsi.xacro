@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="storz_straight_exoscope_hsi" params="exoscope_name robot_name parent">
+
+        <!-- include gazebo specifications -->
+        <xacro:include filename="$(find storz_straight_exoscope_hsi_description)/urdf/storz_straight_exoscope_hsi.gazebo.xacro" />
+
+        <!--joint between {parent} and link_0-->
+        <joint name="${parent}_${exoscope_name}_joint" type="fixed">
+            <parent link="${parent}"/>
+            <child link="${exoscope_name}_link_0"/>
+            <origin xyz="0 0 0" rpy="0 -1.57079632679 1.57079632679"/>
+        </joint>
+
+        <!-- link 0 -->
+        <link name="${exoscope_name}_link_0">
+            <inertial>
+                <origin rpy="0 0 0" xyz="0.04071287283172147 -8.153806755863768e-05 -0.04195721621845735"/>
+                <mass value="2.4245187944339057"/>
+                <inertia ixx="0.00996" ixy="1e-06" ixz="0.000598" iyy="0.01031" iyz="0.000146" izz="0.00104"/>
+            </inertial>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://storz_straight_exoscope_hsi_description/meshes/visual/link_0.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+                <material name="silver">
+                    <color rgba="1 0 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://storz_straight_exoscope_hsi_description/meshes/collision/link_0.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${exoscope_name}_joint_cm" type="fixed">
+            <origin rpy="0 0 0" xyz="0.046594 0.000596 0.1205"/>
+            <parent link="${exoscope_name}_link_0"/>
+            <child link="${exoscope_name}_link_cm"/>
+        </joint>
+
+        <!-- camera link -->
+        <link name="${exoscope_name}_link_cm"/>
+
+        <!-- optical frame https://answers.ros.org/question/232534/gazebo-camera-frame-is-inconsistent-with-rviz-opencv-convention/ -->
+        <joint name="${exoscope_name}_joint_cm_optical" type="fixed">  <!-- add continuous joint to rotate image digitally -->
+            <parent link="${exoscope_name}_link_cm"/>
+            <child link="${exoscope_name}_link_cm_optical"/>
+            <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679"/>
+            <!--axis xyz="0.0 0.0 0.01"/-->  <!-- rotate about the optical axis -->
+        </joint>  
+
+        <link name="${exoscope_name}_link_cm_optical">
+        </link>  
+
+        <!-- extensions -->
+        <xacro:storz_straight_exoscope_hsi_gazebo exoscope_name="${exoscope_name}" robot_name="${robot_name}"/>
+
+    </xacro:macro>
+</robot>
