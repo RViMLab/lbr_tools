@@ -4,8 +4,10 @@ project(storz_tilt_endoscope_description)
 find_package(ament_cmake REQUIRED)
 
 install(
-    DIRECTORY meshes urdf
+    DIRECTORY gazebo meshes urdf
     DESTINATION share/${PROJECT_NAME}
 )
-    
+
+ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.dsv")
+
 ament_package()

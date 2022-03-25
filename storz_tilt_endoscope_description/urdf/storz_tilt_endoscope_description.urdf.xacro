@@ -5,7 +5,7 @@
     <xacro:macro name="storz_tilt_endoscope" params="tilt_endoscope_name robot_name parent">
 
         <!-- include gazebo specifications -->
-        <xacro:include filename="$(find storz_tilt_endoscope_description)/urdf/storz_tilt_endoscope.gazebo.xacro" />
+        <xacro:include filename="$(find storz_tilt_endoscope_description)/gazebo/storz_tilt_endoscope.gazebo.xacro" />
 
         <!--joint between {parent} and link_0-->
         <joint name="${parent}_${tilt_endoscope_name}_joint" type="fixed">
