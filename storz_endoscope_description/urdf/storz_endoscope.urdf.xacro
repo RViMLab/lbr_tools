@@ -4,7 +4,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="endoscope">
 
     <!--Import the endoscope macro -->
-    <xacro:include filename="$(find storz_endoscope_description)/urdf/storz_endoscope.xacro"/>
+    <xacro:include filename="$(find storz_endoscope_description)/urdf/storz_endoscope_description.urdf.xacro"/>
 
     <!--  Arguments for the med7 macro  -->
     <xacro:arg name="endoscope_name" default="storz_endoscope"/>
