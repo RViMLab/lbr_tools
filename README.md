@@ -4,7 +4,7 @@ Tools for the KUKA LBR iiwa/med 7 R800 robots.
 ## Build
 ```shell
 mkdir -p lbr_tools_ws/src && cd lbr_tools_ws && \
-wget https://raw.githubusercontent.com/RViMLab/lbr_tools/main/lbr_tools/repos.yml -P src && \
+wget https://raw.githubusercontent.com/RViMLab/lbr_tools/foxy/lbr_tools/repos.yml -P src && \
 vcs import src < src/repos.yml && \
 colcon build
 ```
