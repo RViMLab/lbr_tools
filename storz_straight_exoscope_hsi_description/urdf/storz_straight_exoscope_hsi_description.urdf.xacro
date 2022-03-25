@@ -25,8 +25,8 @@
                 <geometry>
                     <mesh filename="package://storz_straight_exoscope_hsi_description/meshes/visual/link_0.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
-                <material name="silver">
-                    <color rgba="1 0 0 1"/>
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 1.0"/>
                 </material>
             </visual>
             <collision>

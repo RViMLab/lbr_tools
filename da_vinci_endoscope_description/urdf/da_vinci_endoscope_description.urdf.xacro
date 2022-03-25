@@ -55,8 +55,8 @@
                 <geometry>
                     <mesh filename="package://da_vinci_endoscope_description/meshes/visual/link_1.stl"/>
                 </geometry>
-                <material name="silver">
-                    <color rgba="1 0 0 1"/>
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 1.0"/>
                 </material>
             </visual>
             <collision>
